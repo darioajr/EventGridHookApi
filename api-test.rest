@@ -1,0 +1,48 @@
+POST http://localhost:8000/eventgridhook HTTP/1.1
+content-type: application/json
+
+[
+    {
+        "eventType": "Microsoft.Storage.BlobCreated",
+        "subject": "/blobServices/default/containers/container1/blobs/blob1",
+        "eventTime": "2023-11-01T18:19:20.0954653Z",
+        "data": {
+            "api": "PutBlob",
+            "url": "https://mystorageaccount.blob.core.windows.net/container1/blob1",
+            "contentLength": 1024
+        }
+    },
+    {
+        "eventType": "Microsoft.Storage.BlobCreated",
+        "subject": "/blobServices/default/containers/container1/blobs/blob2",
+        "eventTime": "2023-11-01T18:19:21.0954653Z",
+        "data": {
+            "api": "PutBlob",
+            "url": "https://mystorageaccount.blob.core.windows.net/container1/blob2",
+            "contentLength": 2048
+        }
+    },
+    {
+        "topic": "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Storage/storageAccounts/{storage-account-name}",
+        "subject": "/blobServices/default/containers/{container-name}/blobs/{blob-name}",
+        "eventType": "Microsoft.Storage.BlobCreated",
+        "eventTime": "2021-11-01T18:19:23.0954653Z",
+        "id": "ca3b8f00-5c7d-4ac4-8a88-3b2095ad3156",
+        "data": {
+            "api": "PutBlob",
+            "clientRequestId": "5c24c130-0c01-4d1e-8a6b-59c2c864e2a2",
+            "requestId": "5c24c130-0c01-4d1e-8a6b-59c2c864e2a2",
+            "eTag": "0x8D8B08C7DB4C1B9",
+            "contentType": "application/octet-stream",
+            "contentLength": 524288,
+            "blobType": "BlockBlob",
+            "url": "https://{storage-account-name}.blob.core.windows.net/{container-name}/{blob-name}",
+            "sequencer": "0000000000002745E0A0A108000BF4BE842E0000000006BE3E40",
+            "storageDiagnostics": {
+            "batchId": "b68529f3-68cd-4744-baa4-3c0498ec19f0"
+            }
+        },
+        "dataVersion": "",
+        "metadataVersion": "1"
+    }
+]

@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  eventgridhookapi:
+    image: eventgridhookapi:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80" # Isso mapeará a porta 8000 do host para a porta 80 do contêiner.
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
