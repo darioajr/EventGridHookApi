@@ -28,4 +28,5 @@ terraform output -raw container_ipv4_address
 ## Limpar os recursos
 ```bash
 terraform plan -destroy -out main.destroy.tfplan
+terraform apply main.destroy.tfplan
 ```
